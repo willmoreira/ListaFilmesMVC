@@ -88,17 +88,17 @@
 		74B7708329F9559500800E4F /* ListarFilmesMVC */ = {
 			isa = PBXGroup;
 			children = (
-				74B7709A29F957C900800E4F /* Controllers */,
-				74B7709929F957C000800E4F /* Views */,
-				74B7709829F957A500800E4F /* Models */,
-				74B7708429F9559500800E4F /* AppDelegate.swift */,
-				74B7708629F9559500800E4F /* SceneDelegate.swift */,
-				74B7708A29F9559500800E4F /* Main.storyboard */,
-				74B7708D29F9559700800E4F /* Assets.xcassets */,
-				74B7708F29F9559700800E4F /* LaunchScreen.storyboard */,
+				3D40DA792A4B58B00001BE26 /* Config.plist */,
 				3D40DA7B2A4B59260001BE26 /* GoogleService-Info.plist */,
 				74B7709229F9559700800E4F /* Info.plist */,
-				3D40DA792A4B58B00001BE26 /* Config.plist */,
+				74B7708429F9559500800E4F /* AppDelegate.swift */,
+				74B7708629F9559500800E4F /* SceneDelegate.swift */,
+				74B7708D29F9559700800E4F /* Assets.xcassets */,
+				74B7709A29F957C900800E4F /* Controllers */,
+				74B7708F29F9559700800E4F /* LaunchScreen.storyboard */,
+				74B7708A29F9559500800E4F /* Main.storyboard */,
+				74B7709829F957A500800E4F /* Models */,
+				74B7709929F957C000800E4F /* Views */,
 			);
 			path = ListarFilmesMVC;
 			sourceTree = "<group>";
