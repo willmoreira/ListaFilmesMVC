@@ -27,14 +27,14 @@ class CreateLoginView: UIView {
 
     lazy var inputLogin: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Digite seu email"
+        textField.placeholder = ProjectStrings.enterEmail.localized
         textField.borderStyle = .roundedRect
         return textField
     }()
     
     lazy var inputSenha: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Digite sua senha"
+        textField.placeholder = ProjectStrings.enterPassword.localized
         textField.borderStyle = .roundedRect
         return textField
     }()
@@ -58,12 +58,12 @@ class CreateLoginView: UIView {
     }
     
     private func setupInit() {
-        self.titleView.text = "CADASTRAR LOGIN"
-        self.titleLoginLabel.text = "Email"
+        self.titleView.text = ProjectStrings.registerLogin.localized
+        self.titleLoginLabel.text = ProjectStrings.email.localized
         self.inputLogin = inputLogin
-        self.titlePasswordLabel.text = "Senha"
+        self.titlePasswordLabel.text = ProjectStrings.password.localized
         self.inputSenha = inputSenha
-        self.createLoginButton.setTitle("Cadastrar", for: .normal)
+        self.createLoginButton.setTitle(ProjectStrings.register.localized, for: .normal)
         setupLayout()
     }
     

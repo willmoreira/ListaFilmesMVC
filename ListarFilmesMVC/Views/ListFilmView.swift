@@ -21,7 +21,7 @@ class ListFilmView: UIView {
         let tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: ProjectStrings.cell.localized)
         return tableView
     }()
     
@@ -46,8 +46,8 @@ class ListFilmView: UIView {
     }
     
     private func configureView() {
-        self.titleView.text = "Lista de Filmes"
-        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "CustomTableViewCell")
+        self.titleView.text = ProjectStrings.titleMoviesList.localized
+        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: ProjectStrings.customTableViewCell.localized)
         addSubview(titleView)
         addSubview(tableView)
         
@@ -81,22 +81,22 @@ extension ListFilmView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! CustomTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProjectStrings.customTableViewCell.localized, for: indexPath) as! CustomTableViewCell
         cell.nameLabel.text = listFilms[indexPath.row].title
-        cell.subtitleLabel.text = "Lançado em " + formatDate(date: listFilms[indexPath.row].releaseDate)
+        cell.subtitleLabel.text = ProjectStrings.launchedIn.localized + formatDate(date: listFilms[indexPath.row].releaseDate)
         cell.configureImage(posterPath: listFilms[indexPath.row].posterPath)
         return cell
     }
     
     func formatDate(date: String) -> String {
         let dateFormatter = DateFormatter()
-        var dateString: String = ""
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        var dateString: String = ProjectStrings.stringEmpty.localized
+        dateFormatter.dateFormat = ProjectStrings.dateFormat.localized
 
         if let date = dateFormatter.date(from: date) {
             dateFormatter.dateStyle = .long
             dateFormatter.timeStyle = .none
-            dateFormatter.locale = Locale(identifier: "pt_BR")
+            dateFormatter.locale = Locale(identifier: ProjectStrings.ptBr.localized)
             dateString = dateFormatter.string(from: date)
         }
         return dateString

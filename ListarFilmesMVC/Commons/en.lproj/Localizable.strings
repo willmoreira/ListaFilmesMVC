@@ -1,0 +1,61 @@
+/* 
+  Localizable.strings
+  ListarFilmesMVC
+
+  Created by William on 28/06/23.
+  
+*/
+
+"success" = "Success!";
+"userSuccessfullyCreatedMessage" = "User successfully registered, login now!";
+"incorrectEmailFormat" = "Incorrect email format!";
+"incorrectEmailFormatMessage" = "The email address does not appear to be valid.";
+"emailAlreadyInUse" = "Email already in use!";
+"emailAlreadyInUseMessage" = "The email address is already being used by another account.";
+"passwordRule" = "Password rule";
+"passwordRuleMessage" = "Password must be 6 characters or more.";
+"errorInPasswordField" = "Password field error";
+"errorInPasswordFieldMessage" = "Fill in the Password field";
+"errorInLoginField" = "Email field error";
+"errorInLoginFieldMessage" = "Fill in the Email field";
+"userNotFound" = "User not found";
+"userNotFoundMessage" = "There is no user record corresponding to this email, check the email or register a new user.";
+"invalidPassword" = "Invalid password!";
+"invalidPasswordMessage" = "The password is invalid or the user does not have a password.";
+"guidelinesHaveBeenSentToYourEmail" = "Instructions have been sent to your email!";
+"userNotFoundMessage2" = "There is no user record corresponding to this identifier. The user may have been deleted.";
+"back" = "Back";
+"enterEmail" = "Type your e-mail";
+"enterPassword" = "Type your password";
+"recoveryPassword" = "Recover Password";
+"createAccount" = "Create an account";
+"titleLoginView" = "MOVIE LIST APP";
+"email" = "Email";
+"password" = "Password";
+"enter" = "Enter";
+"ok" = "OK";
+"registerLogin" = "REGISTER LOGIN";
+"register" = "Register";
+"titleMoviesList" = "Movies List";
+"launchedIn" = "Launched in ";
+"exitApp" = "Exit APP";
+"send" = "Send";
+"recoveryPassword2" = "RECOVER PASSWORD";
+
+// MARK: - Strings defaults sem necessidade de internaciomalizar
+"get" = "GET";
+"stringEmpty" = "";
+"placeholder" = "placeholder";
+"cell" = "cell";
+"customTableViewCell" = "CustomTableViewCell";
+"fatalError" = "init(coder:) has not been implemented, You should't initialize the ViewController through Storyboards";
+"ptBr" = "pt_BR";
+"dateFormat" = "yyyy-MM-dd";
+"endDateFormat" = "dd 'de' MMMM 'de' yyyy";
+"urlSdWebImage" = "https://image.tmdb.org/t/p/w500";
+"apiKey" = "ac894a60b6f5b4abf7ff6c58dbc67ced";
+"urlString" = "https://api.themoviedb.org/3/movie/popular?api_key=";
+
+
+
+

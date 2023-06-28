@@ -25,7 +25,7 @@ class ResetLoginView: UIView {
     
     lazy var inputLogin: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Digite seu email"
+        textField.placeholder = ProjectStrings.enterEmail.localized
         textField.borderStyle = .roundedRect
         return textField
     }()
@@ -49,10 +49,10 @@ class ResetLoginView: UIView {
     }
     
     private func setupInit() {
-        self.titleView.text = "RECUPERAR SENHA"
-        self.titleLoginLabel.text = "Email"
+        self.titleView.text = ProjectStrings.recoveryPassword2.localized
+        self.titleLoginLabel.text = ProjectStrings.email.localized
         self.inputLogin = inputLogin
-        self.resetLoginButton.setTitle("Enviar", for: .normal)
+        self.resetLoginButton.setTitle(ProjectStrings.send.localized, for: .normal)
         setupLayout()
     }
     

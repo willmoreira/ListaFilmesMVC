@@ -12,8 +12,8 @@ class LoginViewController: UIViewController, LoginViewDelegate {
     
     var loginView = LoginView()
     var listFilms: [Result] = []
-    var login: String = ""
-    var senha: String = ""
+    var login: String = ProjectStrings.stringEmpty.localized
+    var senha: String = ProjectStrings.stringEmpty.localized
     
     override func loadView() {
         super.loadView()
@@ -29,6 +29,7 @@ class LoginViewController: UIViewController, LoginViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        cleanTextFields()
     }
     
     func searchFilmList() {
@@ -39,8 +40,8 @@ class LoginViewController: UIViewController, LoginViewDelegate {
             fatalError("Arquivo de configuração 'Config.plist' não encontrado ou chave 'API_KEY' ausente.")
         }
         
-        let urlString = "https://api.themoviedb.org/3/movie/popular?api_key=" + apiKey
-       
+        let urlString = ProjectStrings.urlString.localized + apiKey
+
         // Crie uma instância de URLSession
         let session = URLSession.shared
         
@@ -89,10 +90,12 @@ class LoginViewController: UIViewController, LoginViewDelegate {
                 loginView.activityIndicator.startAnimating()
                 tryLogin()
             } else {
-                showAlert(title: "Erro no campo Senha", message: "Preencha o campo Senha")
+                showAlert(title: ProjectStrings.errorInPasswordField.localized,
+                          message: ProjectStrings.errorInPasswordFieldMessage.localized)
             }
         } else {
-            showAlert(title: "Erro no campo Login", message: "Preencha o campo Login")
+            showAlert(title: ProjectStrings.errorInLoginField.localized,
+                      message: ProjectStrings.errorInLoginFieldMessage.localized)
         }
     }
     
@@ -101,12 +104,18 @@ class LoginViewController: UIViewController, LoginViewDelegate {
             
             self.loginView.activityIndicator.stopAnimating()
             
-            if let error = error {
-                if error.localizedDescription == "The password is invalid or the user does not have a password." {
-                    self.showAlert(title: "Senha inválida!", message: "A senha é inválida ou o usuário não possui uma senha.")
+            if let error = error as NSError? {
+                if error.code == 17009 {
+                    self.showAlert(title: ProjectStrings.invalidPassword.localized,
+                                              message: ProjectStrings.invalidPasswordMessage.localized)
                 }
-                if error.localizedDescription == "There is no user record corresponding to this identifier. The user may have been deleted." {
-                    self.showAlert(title: "Usuario não encontrado!", message: "Não há registro de usuário correspondente a este email, confira o email ou cadastre um novo usuário.")
+                if error.code == 17011 {
+                    self.showAlert(title: ProjectStrings.userNotFound.localized,
+                                              message: ProjectStrings.userNotFoundMessage.localized)
+                }
+                if error.code == 17008 {
+                    self.showAlert(title: ProjectStrings.incorrectEmailFormat.localized,
+                                              message: ProjectStrings.incorrectEmailFormatMessage.localized)
                 }
                 return
             }
@@ -116,7 +125,7 @@ class LoginViewController: UIViewController, LoginViewDelegate {
     
     func resetButtonPressed() {
         let resetLoginViewController = ResetLoginViewController()
-        let backButton = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
+        let backButton = UIBarButtonItem(title: ProjectStrings.back.localized, style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButton
         self.navigationController?.pushViewController(resetLoginViewController, animated: true)
     }
@@ -124,7 +133,7 @@ class LoginViewController: UIViewController, LoginViewDelegate {
     func createButtonPressed() {
         let createLoginViewController = CreateLoginViewController()
         createLoginViewController.listFilms = self.listFilms
-        let backButton = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
+        let backButton = UIBarButtonItem(title: ProjectStrings.back.localized, style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButton
         self.navigationController?.pushViewController(createLoginViewController, animated: true)
     }
@@ -134,14 +143,14 @@ class LoginViewController: UIViewController, LoginViewDelegate {
         let listFilmsViewController = ListFilmsViewController()
         listFilmsViewController.filmView.listFilms = self.listFilms
         
-        let backButton = UIBarButtonItem(title: "Sair do APP", style: .plain, target: nil, action: nil)
+        let backButton = UIBarButtonItem(title: ProjectStrings.exitApp.localized, style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButton
         self.navigationController?.pushViewController(listFilmsViewController, animated: true)
     }
     
     func cleanTextFields() {
-        loginView.inputSenha.text = ""
-        loginView.inputLogin.text = ""
+        loginView.inputSenha.text = ProjectStrings.stringEmpty.localized
+        loginView.inputLogin.text = ProjectStrings.stringEmpty.localized
     }
     
     @objc func exitButtonTapped() {
@@ -150,8 +159,14 @@ class LoginViewController: UIViewController, LoginViewDelegate {
     
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let okAction = UIAlertAction(title: ProjectStrings.ok.localized, style: .default, handler: nil)
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func dismissKeyboard() {
+        if loginView.inputLogin.isFirstResponder || loginView.inputSenha.isFirstResponder {
+            view.endEditing(true)
+        }
     }
 }

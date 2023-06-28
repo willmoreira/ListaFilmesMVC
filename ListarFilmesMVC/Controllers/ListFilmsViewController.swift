@@ -12,16 +12,16 @@ class ListFilmsViewController: UIViewController, ListFilmViewDelegate {
     
     var filmView = ListFilmView()
     var film: Result = Result(adult: false,
-                              backdropPath: "",
+                              backdropPath: ProjectStrings.stringEmpty.localized,
                               genreIDS: [0],
                               id: 0,
-                              originalLanguage: "",
-                              originalTitle: "",
-                              overview: "",
+                              originalLanguage: ProjectStrings.stringEmpty.localized,
+                              originalTitle: ProjectStrings.stringEmpty.localized,
+                              overview: ProjectStrings.stringEmpty.localized,
                               popularity: 0.0,
-                              posterPath: "",
-                              releaseDate: "",
-                              title: "",
+                              posterPath: ProjectStrings.stringEmpty.localized,
+                              releaseDate: ProjectStrings.stringEmpty.localized,
+                              title: ProjectStrings.stringEmpty.localized,
                               video: false,
                               voteAverage: 0.0,
                               voteCount: 0)
@@ -40,7 +40,7 @@ class ListFilmsViewController: UIViewController, ListFilmViewDelegate {
     func goToDetailViewController(filmSelected: Result) {
         let detailVC = DetailFilmViewController()
         detailVC.film = filmSelected
-        let backButton = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
+        let backButton = UIBarButtonItem(title: ProjectStrings.back.localized, style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButton
         navigationController?.pushViewController(detailVC, animated: true)
     }

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3D40DA7A2A4B58B00001BE26 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D40DA792A4B58B00001BE26 /* Config.plist */; };
 		3D40DA7C2A4B59260001BE26 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D40DA7B2A4B59260001BE26 /* GoogleService-Info.plist */; };
+		3D40DA812A4CAB500001BE26 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D40DA802A4CAB500001BE26 /* Localizable.swift */; };
+		3D40DA832A4CAB870001BE26 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D40DA822A4CAB870001BE26 /* String+Extension.swift */; };
+		3D40DA852A4CABBE0001BE26 /* ProjectStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D40DA842A4CABBE0001BE26 /* ProjectStrings.swift */; };
+		3D40DA8C2A4CACBF0001BE26 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D40DA8E2A4CACBF0001BE26 /* Localizable.strings */; };
 		3D66B93C2A3B58EE00DA4FC1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3D66B93B2A3B58EE00DA4FC1 /* FirebaseAuth */; };
 		74B7708529F9559500800E4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B7708429F9559500800E4F /* AppDelegate.swift */; };
 		74B7708729F9559500800E4F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B7708629F9559500800E4F /* SceneDelegate.swift */; };
@@ -34,6 +38,13 @@
 /* Begin PBXFileReference section */
 		3D40DA792A4B58B00001BE26 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		3D40DA7B2A4B59260001BE26 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3D40DA802A4CAB500001BE26 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		3D40DA822A4CAB870001BE26 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		3D40DA842A4CABBE0001BE26 /* ProjectStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectStrings.swift; sourceTree = "<group>"; };
+		3D40DA8A2A4CAC9B0001BE26 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		3D40DA8B2A4CAC9B0001BE26 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
+		3D40DA8D2A4CACBF0001BE26 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		3D40DA8F2A4CACC10001BE26 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		74B7708129F9559500800E4F /* ListarFilmesMVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListarFilmesMVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74B7708429F9559500800E4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74B7708629F9559500800E4F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +80,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D40DA7D2A4CAAFC0001BE26 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				3D40DA7F2A4CAB290001BE26 /* Protocols */,
+				3D40DA7E2A4CAB1E0001BE26 /* Extensions */,
+				3D40DA842A4CABBE0001BE26 /* ProjectStrings.swift */,
+				3D40DA8E2A4CACBF0001BE26 /* Localizable.strings */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		3D40DA7E2A4CAB1E0001BE26 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3D40DA822A4CAB870001BE26 /* String+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3D40DA7F2A4CAB290001BE26 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3D40DA802A4CAB500001BE26 /* Localizable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		74B7707829F9559500800E4F = {
 			isa = PBXGroup;
 			children = (
@@ -94,9 +132,10 @@
 				74B7708429F9559500800E4F /* AppDelegate.swift */,
 				74B7708629F9559500800E4F /* SceneDelegate.swift */,
 				74B7708D29F9559700800E4F /* Assets.xcassets */,
-				74B7709A29F957C900800E4F /* Controllers */,
 				74B7708F29F9559700800E4F /* LaunchScreen.storyboard */,
 				74B7708A29F9559500800E4F /* Main.storyboard */,
+				3D40DA7D2A4CAAFC0001BE26 /* Commons */,
+				74B7709A29F957C900800E4F /* Controllers */,
 				74B7709829F957A500800E4F /* Models */,
 				74B7709929F957C000800E4F /* Views */,
 			);
@@ -182,6 +221,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 74B7707829F9559500800E4F;
 			packageReferences = (
@@ -203,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74B7709129F9559700800E4F /* LaunchScreen.storyboard in Resources */,
+				3D40DA8C2A4CACBF0001BE26 /* Localizable.strings in Resources */,
 				74B7708E29F9559700800E4F /* Assets.xcassets in Resources */,
 				3D40DA7C2A4B59260001BE26 /* GoogleService-Info.plist in Resources */,
 				3D40DA7A2A4B58B00001BE26 /* Config.plist in Resources */,
@@ -217,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D40DA832A4CAB870001BE26 /* String+Extension.swift in Sources */,
 				74B770A029F9612D00800E4F /* LoginView.swift in Sources */,
 				74B770C729FC36F600800E4F /* DetailFilmViewController.swift in Sources */,
 				74B770BC29FAF85300800E4F /* CreateLoginView.swift in Sources */,
@@ -224,7 +266,9 @@
 				74B770A829F9ED2D00800E4F /* FilmModel.swift in Sources */,
 				74B770A429F964A500800E4F /* LoginViewController.swift in Sources */,
 				74B770BA29FAEE0900800E4F /* CreateLoginViewController.swift in Sources */,
+				3D40DA812A4CAB500001BE26 /* Localizable.swift in Sources */,
 				74B770B829FADBFC00800E4F /* ResetLoginView.swift in Sources */,
+				3D40DA852A4CABBE0001BE26 /* ProjectStrings.swift in Sources */,
 				74B770C029FC06ED00800E4F /* CellCustomView.swift in Sources */,
 				74B770B629FADA0100800E4F /* ResetLoginViewController.swift in Sources */,
 				74B7709C29F95F1800800E4F /* UsuarioModel.swift in Sources */,
@@ -237,10 +281,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		3D40DA8E2A4CACBF0001BE26 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D40DA8D2A4CACBF0001BE26 /* pt-BR */,
+				3D40DA8F2A4CACC10001BE26 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		74B7708A29F9559500800E4F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				74B7708B29F9559500800E4F /* Base */,
+				3D40DA8B2A4CAC9B0001BE26 /* pt-BR */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -249,6 +303,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				74B7709029F9559700800E4F /* Base */,
+				3D40DA8A2A4CAC9B0001BE26 /* pt-BR */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -260,6 +315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -320,6 +376,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

@@ -32,7 +32,9 @@ class ResetLoginViewController: UIViewController, ResetLoginViewDelegate {
         if !email.isEmpty {
             tryReset(email: email)
         } else {
-            showAlert(title: "Erro no campo Email", message: "Preencha o campo Login")
+            showAlert(title: ProjectStrings.errorInLoginField.localized,
+                      message: ProjectStrings.errorInLoginFieldMessage.localized,
+                      result: false)
         }
     }
     
@@ -40,13 +42,23 @@ class ResetLoginViewController: UIViewController, ResetLoginViewDelegate {
         self.resetLoginView.activityIndicator.startAnimating()
         Auth.auth().sendPasswordReset(withEmail: email) { error in
             self.resetLoginView.activityIndicator.stopAnimating()
-            if let error = error {
-                if error.localizedDescription == "There is no user record corresponding to this identifier. The user may have been deleted." {
-                    self.showAlert(title: "Usuário não encontrado", message: "Não há registro de usuário correspondente a este identificador. O usuário pode ter sido excluído.")
+            if let error = error as NSError? {
+                if error.code == 17011 {
+                    self.showAlert(title: ProjectStrings.userNotFound.localized,
+                                   message: ProjectStrings.userNotFoundMessage2.localized,
+                                   result: false)
+                }
+                if error.code == 17008 {
+                    self.showAlert(title: ProjectStrings.incorrectEmailFormat.localized,
+                                   message: ProjectStrings.incorrectEmailFormatMessage.localized,
+                                   result: false)
                 }
                 return
             }
-            self.goToLogin()
+            self.showAlert(title: ProjectStrings.success.localized,
+                           message: ProjectStrings.guidelinesHaveBeenSentToYourEmail.localized,
+                           result: true)
+            
         }
     }
     
@@ -54,9 +66,13 @@ class ResetLoginViewController: UIViewController, ResetLoginViewDelegate {
         self.navigationController?.popViewController(animated: true)
     }
     
-    func showAlert(title: String, message: String) {
+    func showAlert(title: String, message: String, result: Bool) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let okAction = UIAlertAction(title: ProjectStrings.ok.localized, style: .default) { action in
+            if result {
+                self.goToLogin()
+            }
+        }
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
     }

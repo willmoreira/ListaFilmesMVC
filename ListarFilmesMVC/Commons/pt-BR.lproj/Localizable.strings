@@ -1,0 +1,59 @@
+/* 
+  Localizable.strings
+  ListarFilmesMVC
+
+  Created by William on 28/06/23.
+  
+*/
+
+"success" = "Sucesso!";
+"userSuccessfullyCreatedMessage" = "Usuario cadastrado com sucesso, faça o Login agora!";
+"incorrectEmailFormat" = "Formato do email incorreto!";
+"incorrectEmailFormatMessage" = "O endereço de e-mail não parece ser valido";
+"emailAlreadyInUse" = "Email já em uso!";
+"emailAlreadyInUseMessage" = "O endereço de e-mail já está sendo usado por outra conta.";
+"passwordRule" = "Regra de senha";
+"passwordRuleMessage" = "A senha deve ter 6 caracteres ou mais.";
+"errorInPasswordField" = "Erro no campo Senha";
+"errorInPasswordFieldMessage" = "Preencha o campo Senha";
+"errorInLoginField" = "Erro no campo Email";
+"errorInLoginFieldMessage" = "Preencha o campo Email";
+"userNotFound" = "Usuário não encontrado";
+"userNotFoundMessage" = "Não há registro de usuário correspondente a este email, confira o email ou cadastre um novo usuário.";
+"invalidPassword" = "Senha inválida!";
+"invalidPasswordMessage" = "A senha é inválida ou o usuário não possui uma senha.";
+"guidelinesHaveBeenSentToYourEmail" = "As orientações foram enviadas para seu email!";
+"userNotFoundMessage2" = "Não há registro de usuário correspondente a este identificador. O usuário pode ter sido excluído.";
+"back" = "Voltar";
+"enterEmail" = "Digite seu email";
+"enterPassword" = "Digite sua senha";
+"recoveryPassword" = "Recuperar senha";
+"createAccount" = "Criar Conta";
+"titleLoginView" = "APP LISTA DE FILMES";
+"email" = "Email";
+"password" = "Senha";
+"enter" = "Entrar";
+"ok" = "OK";
+"registerLogin" = "CADASTRAR LOGIN";
+"register" = "Cadastrar";
+"titleMoviesList" = "Lista de Filmes";
+"launchedIn" = "Lançado em ";
+"exitApp" = "Sair do APP";
+"send" = "Enviar";
+"recoveryPassword2" = "RECUPERAR SENHA";
+
+// MARK: - Strings defaults sem necessidade de internaciomalizar
+"get" = "GET";
+"stringEmpty" = "";
+"placeholder" = "placeholder";
+"cell" = "cell";
+"customTableViewCell" = "CustomTableViewCell";
+"fatalError" = "init(coder:) has not been implemented, You should't initialize the ViewController through Storyboards";
+"ptBr" = "pt_BR";
+"dateFormat" = "yyyy-MM-dd";
+"endDateFormat" = "dd 'de' MMMM 'de' yyyy";
+"urlSdWebImage" = "https://image.tmdb.org/t/p/w500";
+"urlString" = "https://api.themoviedb.org/3/movie/popular?api_key=";
+
+
+

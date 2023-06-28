@@ -12,8 +12,8 @@ class CreateLoginViewController: UIViewController, CreateLoginViewDelegate{
     
     var createLoginView = CreateLoginView()
     var listFilms: [Result] = []
-    var login: String = ""
-    var senha: String = ""
+    var login: String = ProjectStrings.stringEmpty.localized
+    var senha: String = ProjectStrings.stringEmpty.localized
     
     override func loadView() {
         super.loadView()
@@ -36,40 +36,52 @@ class CreateLoginViewController: UIViewController, CreateLoginViewDelegate{
         
         if !login.isEmpty {
             if !senha.isEmpty {
-                createLoginView.activityIndicator.startAnimating()
                 tryCreateLogin()
             } else {
-                showAlert(title: "Erro no campo Senha", message: "Preencha o campo Senha")
+                showAlert(title: ProjectStrings.errorInPasswordField.localized,
+                          message: ProjectStrings.errorInPasswordFieldMessage.localized,
+                          result: false)
             }
         } else {
-            showAlert(title: "Erro no campo Login", message: "Preencha o campo Login")
+            showAlert(title: ProjectStrings.errorInLoginField.localized,
+                      message: ProjectStrings.errorInLoginFieldMessage.localized,
+                      result: false)
         }
     }
     
     func tryCreateLogin() {
+        createLoginView.activityIndicator.startAnimating()
         Auth.auth().createUser(withEmail: login, password: senha) { authResult, error in
             self.createLoginView.activityIndicator.stopAnimating()
-            
-            if let error = error {
-                if error.localizedDescription == "The email address is already in use by another account." {
-                    self.showAlert(title: "Email já em uso!", message: "O endereço de e-mail já está sendo usado por outra conta.")
+            if let error = error as NSError? {
+                if error.code == 17007 {
+                    self.showAlert(title: ProjectStrings.emailAlreadyInUse.localized,
+                                             message: ProjectStrings.emailAlreadyInUseMessage.localized,
+                                             result: false)
                 }
-                if error.localizedDescription == "The email address is badly formatted." {
-                    self.showAlert(title: "Formato do email incorreto!", message: "O endereço de e-mail não parece ser valido")
+                if error.code == 17008 {
+                    self.showAlert(title: ProjectStrings.incorrectEmailFormat.localized,
+                                             message: ProjectStrings.incorrectEmailFormatMessage.localized,
+                                             result: false)
                 }
-                if error.localizedDescription == "The password must be 6 characters long or more." {
-                    self.showAlert(title: "Regra de senha", message: "A senha deve ter 6 caracteres ou mais.")
+                if error.code == 17026 {
+                    self.showAlert(title: ProjectStrings.passwordRule.localized,
+                                             message: ProjectStrings.passwordRuleMessage.localized,
+                                             result: false)
                 }
                 return
             }
-            self.showAlert(title: "Sucesso!", message: "Usuario cadastrado com sucesso, faça o Login agora!")
+            self.createLoginView.activityIndicator.stopAnimating()
+            self.showAlert(title: ProjectStrings.success.localized,
+                               message: ProjectStrings.userSuccessfullyCreatedMessage.localized,
+                               result: true)
         }
     }
     
-    func showAlert(title: String, message: String) {
+    func showAlert(title: String, message: String, result: Bool) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { action in
-            if title == "Sucesso!" {
+        let okAction = UIAlertAction(title: ProjectStrings.ok.localized, style: .default) { action in
+            if result {
                 self.goToLogin()
             }
         }

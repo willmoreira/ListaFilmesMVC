@@ -70,8 +70,8 @@ class DetailFilmViewController: UIViewController {
     }
    
     func configureImage(posterPath: String) {
-        let imageUrl = URL(string: "https://image.tmdb.org/t/p/w500" + posterPath)
-        customImageView.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: "placeholder"))
+        let imageUrl = URL(string: ProjectStrings.urlSdWebImage.localized + posterPath)
+        customImageView.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: ProjectStrings.placeholder.localized))
     }
 }
 
