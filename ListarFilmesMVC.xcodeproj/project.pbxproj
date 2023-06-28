@@ -19,7 +19,6 @@
 		74B7708C29F9559500800E4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74B7708A29F9559500800E4F /* Main.storyboard */; };
 		74B7708E29F9559700800E4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74B7708D29F9559700800E4F /* Assets.xcassets */; };
 		74B7709129F9559700800E4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74B7708F29F9559700800E4F /* LaunchScreen.storyboard */; };
-		74B7709C29F95F1800800E4F /* UsuarioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B7709B29F95F1800800E4F /* UsuarioModel.swift */; };
 		74B770A029F9612D00800E4F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B7709F29F9612D00800E4F /* LoginView.swift */; };
 		74B770A229F9635700800E4F /* ListFilmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B770A129F9635700800E4F /* ListFilmView.swift */; };
 		74B770A429F964A500800E4F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B770A329F964A500800E4F /* LoginViewController.swift */; };
@@ -52,7 +51,6 @@
 		74B7708D29F9559700800E4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74B7709029F9559700800E4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74B7709229F9559700800E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		74B7709B29F95F1800800E4F /* UsuarioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioModel.swift; sourceTree = "<group>"; };
 		74B7709F29F9612D00800E4F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		74B770A129F9635700800E4F /* ListFilmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFilmView.swift; sourceTree = "<group>"; };
 		74B770A329F964A500800E4F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -145,7 +143,6 @@
 		74B7709829F957A500800E4F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				74B7709B29F95F1800800E4F /* UsuarioModel.swift */,
 				74B770A729F9ED2D00800E4F /* FilmModel.swift */,
 			);
 			path = Models;
@@ -271,7 +268,6 @@
 				3D40DA852A4CABBE0001BE26 /* ProjectStrings.swift in Sources */,
 				74B770C029FC06ED00800E4F /* CellCustomView.swift in Sources */,
 				74B770B629FADA0100800E4F /* ResetLoginViewController.swift in Sources */,
-				74B7709C29F95F1800800E4F /* UsuarioModel.swift in Sources */,
 				74B7708729F9559500800E4F /* SceneDelegate.swift in Sources */,
 				74B770A229F9635700800E4F /* ListFilmView.swift in Sources */,
 				74B770A629F964B900800E4F /* ListFilmsViewController.swift in Sources */,

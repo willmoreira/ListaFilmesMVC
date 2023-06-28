@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class ListFilmsViewController: UIViewController, ListFilmViewDelegate {
     
     var filmView = ListFilmView()
@@ -44,5 +43,4 @@ class ListFilmsViewController: UIViewController, ListFilmViewDelegate {
         navigationItem.backBarButtonItem = backButton
         navigationController?.pushViewController(detailVC, animated: true)
     }
-   
 }
